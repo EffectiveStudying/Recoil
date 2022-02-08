@@ -1,6 +1,7 @@
-import Home from "./Home/Home";
-import Footer from "../blocks/Footer";
-import Header from "../blocks/Header";
+import { Footer } from "../blocks"
+import { Header } from "../blocks"
+import Home from "./Home/Home"
+
 
 const index = () => {
     return (
