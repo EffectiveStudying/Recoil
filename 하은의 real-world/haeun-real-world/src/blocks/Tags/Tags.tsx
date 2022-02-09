@@ -8,7 +8,7 @@ export const tagListSelector = selector({
     get: async() => {
         try{
             const response = await axios.get(
-                `https://dongha-real-world.herokuapp.com/api/tags`
+                `https://conduit.productionready.io/api/tags`
             );
             return response.data;
         }catch (e) {
