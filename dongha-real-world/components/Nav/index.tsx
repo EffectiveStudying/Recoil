@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import Link from 'next/link';
 import { useRecoilValue } from 'recoil';
-import { $user } from 'states/user';
+import { $user } from 'stores/user.store';
 import SignedNav from './SignedNav';
 
 export type NavProps = {};

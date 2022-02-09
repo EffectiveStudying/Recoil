@@ -1,18 +1,26 @@
+import Banner from 'components/Banner';
 import Footer from 'components/Footer';
 import Nav from 'components/Nav';
+import Tags from 'components/Tags';
 import type { NextPage } from 'next';
+import { useRecoilValueLoadable } from 'recoil';
+import { $tags } from 'stores/tag.store';
 
 const Home: NextPage = () => {
+    const tagsLoadable = useRecoilValueLoadable($tags);
+    if (tagsLoadable.state === 'loading') {
+        return <div>loading...</div>;
+    }
+    if (tagsLoadable.state === 'hasError') {
+        return <div>error</div>;
+    }
+    const tags = tagsLoadable.contents;
+
     return (
         <>
             <Nav />
             <div className="home-page">
-                <div className="banner">
-                    <div className="container">
-                        <h1 className="logo-font">conduit</h1>
-                        <p>A place to share your knowledge.</p>
-                    </div>
-                </div>
+                <Banner />
 
                 <div className="container page">
                     <div className="row">
@@ -80,36 +88,7 @@ const Home: NextPage = () => {
                             </div>
                         </div>
                         <div className="col-md-3">
-                            <div className="sidebar">
-                                <p>Popular Tags</p>
-
-                                <div className="tag-list">
-                                    <a href="" className="tag-pill tag-default">
-                                        programming
-                                    </a>
-                                    <a href="" className="tag-pill tag-default">
-                                        javascript
-                                    </a>
-                                    <a href="" className="tag-pill tag-default">
-                                        emberjs
-                                    </a>
-                                    <a href="" className="tag-pill tag-default">
-                                        angularjs
-                                    </a>
-                                    <a href="" className="tag-pill tag-default">
-                                        react
-                                    </a>
-                                    <a href="" className="tag-pill tag-default">
-                                        mean
-                                    </a>
-                                    <a href="" className="tag-pill tag-default">
-                                        node
-                                    </a>
-                                    <a href="" className="tag-pill tag-default">
-                                        rails
-                                    </a>
-                                </div>
-                            </div>
+                            <Tags list={tags} />
                         </div>
                     </div>
                 </div>
