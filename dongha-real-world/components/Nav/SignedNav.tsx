@@ -1,16 +1,12 @@
 import React, { ReactElement } from 'react';
 import Link from 'next/link';
-import { useRecoilValue } from 'recoil';
-import { $user } from 'states/user';
-import SignedNav from './SignedNav';
+import { User } from 'types';
 
-export type NavProps = {};
+export type SignedNavProps = {
+    user: User;
+};
 
-function Nav({}: NavProps): ReactElement {
-    const signedUser = useRecoilValue($user);
-    if (signedUser) {
-        return <SignedNav user={signedUser} />;
-    }
+function SignedNav({ user: { username } }: SignedNavProps): ReactElement {
     return (
         <nav className="navbar navbar-light">
             <div className="container">
@@ -25,12 +21,18 @@ function Nav({}: NavProps): ReactElement {
                     </li>
                     <li className="nav-item">
                         <Link href="/">
-                            <a className="nav-link">Sign in</a>
+                            <a className="nav-link">
+                                <i className="ion-compose" />
+                                &nbsp;New Article
+                            </a>
                         </Link>
                     </li>
                     <li className="nav-item">
                         <Link href="/">
-                            <a className="nav-link">Sign up</a>
+                            <a className="nav-link">
+                                <i className="ion-gear-a" />
+                                &nbsp;Settings
+                            </a>
                         </Link>
                     </li>
                 </ul>
@@ -39,4 +41,4 @@ function Nav({}: NavProps): ReactElement {
     );
 }
 
-export default Nav;
+export default SignedNav;
