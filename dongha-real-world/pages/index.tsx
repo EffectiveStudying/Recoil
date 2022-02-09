@@ -1,3 +1,4 @@
+import Footer from 'components/Footer';
 import Nav from 'components/Nav';
 import type { NextPage } from 'next';
 
@@ -113,18 +114,7 @@ const Home: NextPage = () => {
                     </div>
                 </div>
             </div>
-            <footer>
-                <div className="container">
-                    <a href="/" className="logo-font">
-                        conduit
-                    </a>
-                    <span className="attribution">
-                        An interactive learning project from{' '}
-                        <a href="https://thinkster.io">Thinkster</a>. Code &amp; design licensed
-                        under MIT.
-                    </span>
-                </div>
-            </footer>
+            <Footer />
         </>
     );
 };
