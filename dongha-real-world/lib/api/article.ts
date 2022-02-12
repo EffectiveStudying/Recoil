@@ -1,5 +1,5 @@
 import { Article } from 'types';
-import { instance } from './api';
+import { authInstance, instance } from './api';
 
 export type readArticleListRequest = {
     page: number;
@@ -7,7 +7,10 @@ export type readArticleListRequest = {
     pageSize?: number;
 };
 
-export type readArticleListResponse = Article[];
+export type readArticleListResponse = {
+    articlesCount: number;
+    articles: Article[];
+};
 
 export const readArticleList = async ({
     page,
@@ -22,9 +25,9 @@ export const readArticleList = async ({
     if (!tag) {
         delete params.tag;
     }
-    const result = await instance.get('/articles', {
+    const result = await authInstance.get('/articles', {
         params,
     });
 
-    return result.data.articles;
+    return result.data;
 };
