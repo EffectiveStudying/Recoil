@@ -1,6 +1,7 @@
-import { useRecoilValueLoadable } from "recoil";
+import { useRecoilState, useRecoilValueLoadable, useSetRecoilState } from "recoil";
 import axios from "axios";
 import { selector } from "recoil";
+import { $currentTagState } from "../../atoms";
 
 
 export const tagListSelector = selector({
@@ -19,10 +20,13 @@ export const tagListSelector = selector({
 
 export const Tags = () => {
     const tags = useRecoilValueLoadable(tagListSelector);
+    const setCurrentTag = useSetRecoilState($currentTagState);
     
     switch (tags.state){
         case 'hasValue':
-            const tagList = tags.contents.tags.map((tag) => (<a href="" className="tag-pill tag-default">{tag}</a>));
+            const tagList = tags.contents.tags.map((tag) => (
+                <div className="tag-pill tag-default" onClick={() => setCurrentTag(tag)}>{tag}</div>
+            ));
             return (
                 <div className="col-md-3">
                     <div className="sidebar">

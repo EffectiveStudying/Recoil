@@ -1,6 +1,31 @@
 import { ISOtoDate } from "../Calculations/DateConversion";
 import { ArticleTags } from "./ArticleTags";
 
+export type UserType = {
+    username: string,
+    bio: string,
+    image: string,
+    following: boolean
+};
+
+export type ArticleType = {
+    articles: articleType[],
+    articlesCount: number
+}
+
+export type articleType = {
+    slug: string,
+    title: string,
+    description: string,
+    body: string,
+    tagList: string[],
+    createdAt: string,
+    updatedAt: string,
+    favorited: boolean,
+    favoritesCount: number,
+    author: UserType
+};
+
 export const Article = ({article}) => {
     const imgSrc = article.author.image;
     
