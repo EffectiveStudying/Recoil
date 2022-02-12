@@ -15,11 +15,6 @@ export const $currentFavoritedState = atom({
     default: null
 });
 
-export const $limitState = atom({
-    key: 'limit',
-    default: 10
-});
-
 export const $currentTagState = atom({
     key: 'currentTag',
     default: null
@@ -28,4 +23,14 @@ export const $currentTagState = atom({
 export const $currentMenuState = atom({
     key: 'currentMenu',
     default: 'GlobalFeed'
+});
+
+export const $totalCountState = atom({
+    key: 'totalCount',
+    default: 0
+});
+
+export const $limitState = atom({
+    key: 'limit',
+    default: 1
 });

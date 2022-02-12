@@ -1,4 +1,4 @@
-import { Articles, FiltersTag, Tags, YourFeed, GlobalFeed, } from "../../blocks";
+import { Articles, FiltersTag, Tags, YourFeed, GlobalFeed, Pagination } from "../../blocks";
 
 const Home = () => {
     return (
@@ -20,6 +20,7 @@ const Home = () => {
                             </ul>
                         </div>
                         <Articles />
+                        <Pagination />
                     </div>
                     <Tags />
                 </div>
