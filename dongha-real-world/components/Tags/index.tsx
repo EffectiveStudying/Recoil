@@ -25,7 +25,7 @@ type TagProps = {
 
 function Tag({ children }: TagProps): ReactElement {
     return (
-        <Link href={`/${children}`}>
+        <Link href={`/?tag=${children}`}>
             <a className="tag-pill tag-default">{children}</a>
         </Link>
     );

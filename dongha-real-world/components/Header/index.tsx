@@ -2,11 +2,9 @@ import React, { ReactElement } from 'react';
 import Link from 'next/link';
 import { useRecoilValue } from 'recoil';
 import { $user } from 'stores/user.store';
-import SignedNav from './SignedNav';
+import SignedNav from './SignedHeader';
 
-export type NavProps = {};
-
-function Nav({}: NavProps): ReactElement {
+function Header(): ReactElement {
     const signedUser = useRecoilValue($user);
     if (signedUser) {
         return <SignedNav user={signedUser} />;
@@ -39,4 +37,4 @@ function Nav({}: NavProps): ReactElement {
     );
 }
 
-export default Nav;
+export default Header;

@@ -1,6 +1,7 @@
+import ArticlePreviewList from 'components/Article/ArticlePreviewList';
 import Banner from 'components/Banner';
 import Footer from 'components/Footer';
-import Nav from 'components/Nav';
+import Header from 'components/Header';
 import Tags from 'components/Tags';
 import type { NextPage } from 'next';
 import { useRecoilValueLoadable } from 'recoil';
@@ -18,7 +19,7 @@ const Home: NextPage = () => {
 
     return (
         <>
-            <Nav />
+            <Header />
             <div className="home-page">
                 <Banner />
 
@@ -27,11 +28,11 @@ const Home: NextPage = () => {
                         <div className="col-md-9">
                             <div className="feed-toggle">
                                 <ul className="nav nav-pills outline-active">
-                                    <li className="nav-item">
+                                    {/* <li className="nav-item">
                                         <a className="nav-link disabled" href="">
                                             Your Feed
                                         </a>
-                                    </li>
+                                    </li> */}
                                     <li className="nav-item">
                                         <a className="nav-link active" href="">
                                             Global Feed
@@ -39,53 +40,7 @@ const Home: NextPage = () => {
                                     </li>
                                 </ul>
                             </div>
-
-                            <div className="article-preview">
-                                <div className="article-meta">
-                                    <a href="profile.html">
-                                        <img src="http://i.imgur.com/Qr71crq.jpg" />
-                                    </a>
-                                    <div className="info">
-                                        <a href="" className="author">
-                                            Eric Simons
-                                        </a>
-                                        <span className="date">January 20th</span>
-                                    </div>
-                                    <button className="btn btn-outline-primary btn-sm pull-xs-right">
-                                        <i className="ion-heart"></i> 29
-                                    </button>
-                                </div>
-                                <a href="" className="preview-link">
-                                    <h1>How to build webapps that scale</h1>
-                                    <p>This is the description for the post.</p>
-                                    <span>Read more...</span>
-                                </a>
-                            </div>
-
-                            <div className="article-preview">
-                                <div className="article-meta">
-                                    <a href="profile.html">
-                                        <img src="http://i.imgur.com/N4VcUeJ.jpg" />
-                                    </a>
-                                    <div className="info">
-                                        <a href="" className="author">
-                                            Albert Pai
-                                        </a>
-                                        <span className="date">January 20th</span>
-                                    </div>
-                                    <button className="btn btn-outline-primary btn-sm pull-xs-right">
-                                        <i className="ion-heart"></i> 32
-                                    </button>
-                                </div>
-                                <a href="" className="preview-link">
-                                    <h1>
-                                        The song you won't ever stop singing. No matter how hard you
-                                        try.
-                                    </h1>
-                                    <p>This is the description for the post.</p>
-                                    <span>Read more...</span>
-                                </a>
-                            </div>
+                            <ArticlePreviewList />
                         </div>
                         <div className="col-md-3">
                             <Tags list={tags} />
