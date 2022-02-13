@@ -61,3 +61,9 @@
 
 
 
+------
+
+
+
+상태관리, 이제 Recoil 하세요. / FEConf Korea
+
