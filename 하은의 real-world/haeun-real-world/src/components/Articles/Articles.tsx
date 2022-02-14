@@ -38,7 +38,7 @@ export const Articles = () => {
                 return <div>No articles are here... yet</div>
             }
             const articleList = articles.contents.articles?.map((article) => (
-                    <Article article={article} />
+                    <Article key={article.slug} article={article} />
                 ));
             return (
                 <div>{articleList}</div>
