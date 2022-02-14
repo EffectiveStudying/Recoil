@@ -30,15 +30,16 @@ export const Tags = () => {
     
     switch (tags.state){
         case 'hasValue':
-            const tagList = tags.contents.tags.map((tag) => (
-                <div key={`${tag}`} className="tag-pill tag-default" onClick={() => tagSelected(tag)}>{tag}</div>
-            ));
             return (
                 <div className="col-md-3">
                     <div className="sidebar">
                         <p>Popular Tags</p>
                         <div className="tag-list">
-                            { tagList }
+                            { 
+                                tags.contents.tags.map((tag) => (
+                                    <div key={`${tag}`} className="tag-pill tag-default" onClick={() => tagSelected(tag)}>{tag}</div>
+                                )) 
+                            }
                         </div>
                     </div>
                 </div>

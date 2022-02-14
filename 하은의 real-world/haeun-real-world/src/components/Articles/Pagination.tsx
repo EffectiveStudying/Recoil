@@ -17,13 +17,14 @@ export const Pagination = ({totalCount}) => {
     return (
         <nav>
             <ul className="pagination">
-                { pages.map((page) => (
-                    <li key={`${page}`}
-                        className={'page-item ' + (currentPageNum === page ? 'active' : '')} 
-                        onClick={() => setCurrentPageNum(page)}>
-                        <Link href={""}><a className="page-link">{page+1}</a></Link>
-                    </li>
-                ))
+                { 
+                    pages.map((page) => (
+                        <li key={`${page}`}
+                            className={'page-item ' + (currentPageNum === page ? 'active' : '')} 
+                            onClick={() => setCurrentPageNum(page)}>
+                            <Link href={""}><a className="page-link">{page+1}</a></Link>
+                        </li>
+                    ))
                 }
             </ul>
         </nav>

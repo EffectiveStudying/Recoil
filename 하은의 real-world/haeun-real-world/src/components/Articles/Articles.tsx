@@ -35,11 +35,13 @@ export const Articles = () => {
             if(articles.contents.articlesCount === 0){
                 return <div>No articles are here... yet</div>
             }
-            const articleList = articles.contents.articles?.map((article) => (
-                    <Article key={article.slug} article={article} />
-                ));
             return (
-                <div>{articleList}
+                <div>
+                    {
+                        articles.contents.articles?.map((article) => (
+                            <Article key={article.slug} article={article} />
+                        ))
+                    }
                     <Pagination totalCount={articles.contents.articlesCount}/>
                 </div>
             );
