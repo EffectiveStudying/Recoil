@@ -1,4 +1,4 @@
-import { Articles, Pagination, Tabs, Tags } from "../../blocks";
+import { Articles, Pagination, Tabs, Tags } from "../../components";
 
 const Home = () => {
     return (

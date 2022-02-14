@@ -1,6 +1,5 @@
-import { Footer } from "../blocks"
-import { Header } from "../blocks"
-import Home from "./Home/Home"
+import { Footer, Header } from "../components";
+import Home from "./Home/Home";
 
 
 const index = () => {
