@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRecoilValue } from "recoil";
 import { $currentTagState } from "../../atoms";
 
@@ -9,9 +10,7 @@ export const FiltersTag = () => {
     }
     return (
         <li className="nav-item">
-            <a className="nav-link active ng-binding">
-                <i className="ion-pound">{selectedTag}</i>
-            </a>
+            <Link href={""}><a className="nav-link active ng-binding"><i className="ion-pound">{selectedTag}</i></a></Link>
         </li>
     );
 }

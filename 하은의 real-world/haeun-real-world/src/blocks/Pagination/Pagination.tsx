@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { $currentPageNumState, $limitState, $totalCountState } from "../../atoms";
 
@@ -21,7 +22,7 @@ export const Pagination = () => {
                     <li 
                         className={'page-item ' + (currentPageNum === page ? 'active' : '')} 
                         onClick={() => setCurrentPageNum(page)}>
-                        <a className="page-link">{page+1}</a>
+                        <Link href={""}><a className="page-link">{page+1}</a></Link>
                     </li>
                 ))
                 }

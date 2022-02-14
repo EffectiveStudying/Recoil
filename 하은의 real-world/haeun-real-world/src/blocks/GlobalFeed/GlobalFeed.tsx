@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRecoilValue } from "recoil"
 import { $currentMenuState, $currentTagState } from "../../atoms"
 
@@ -7,10 +8,7 @@ export const GlobalFeed = () => {
 
     return (
         <li className="nav-item">
-            <a className={'nav-link ' + (currentMenu !== "GlobalFeed" || currentTag ? 'false' : 'active')}
-                href="/">
-                Global Feed
-            </a>
+            <Link href={"/"}><a className={'nav-link ' + (currentMenu !== "GlobalFeed" || currentTag ? 'false' : 'active')}>Global Feed</a></Link>
         </li>
     );
 }
