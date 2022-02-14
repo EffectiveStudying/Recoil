@@ -1,4 +1,4 @@
-import { Articles, Pagination, Tabs, Tags } from "../../components";
+import { Articles, Tabs, Tags } from "../../components";
 
 const Home = () => {
     return (
@@ -14,7 +14,6 @@ const Home = () => {
                 <div className="col-md-9">
                     <Tabs />
                     <Articles />
-                    <Pagination />
                 </div>
                 <Tags />
             </div>

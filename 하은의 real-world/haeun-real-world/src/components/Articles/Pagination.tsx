@@ -1,14 +1,13 @@
 import Link from "next/link";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { $currentPageNumState, $limitState, $totalCountState } from "../../atoms";
+import { $currentPageNumState, $limitState } from "../../atoms";
 
-export const Pagination = () => {
+export const Pagination = ({totalCount}) => {
     const [currentPageNum, setCurrentPageNum] = useRecoilState($currentPageNumState);
 
     const getRange = (start: number, end: number) => {
       return [...Array(end - start + 1)].map((_, i) => start + i);
     };
-    const totalCount = useRecoilValue($totalCountState);
     const limit = useRecoilValue($limitState);
     const pages = totalCount > 0 ? getRange(0, Math.ceil(totalCount / limit) - 1) : [];
 

@@ -2,7 +2,8 @@ import { useRecoilValueLoadable, useSetRecoilState } from "recoil";
 import axios from "axios";
 import { selector } from "recoil";
 import { Article, ArticleType } from "./Article";
-import { $currentAuthorState, $currentFavoritedState, $currentPageNumState, $currentTagState, $limitState, $totalCountState } from "../../atoms";
+import { $currentAuthorState, $currentFavoritedState, $currentPageNumState, $currentTagState, $limitState } from "../../atoms";
+import { Pagination } from "./Pagination";
 
 export const articleListSelector = selector<ArticleType>({
     key: 'articleListSelector',
@@ -28,9 +29,6 @@ export const articleListSelector = selector<ArticleType>({
 
 export const Articles = () => {
     const articles = useRecoilValueLoadable(articleListSelector);
-    const setTotalCount = useSetRecoilState($totalCountState);
-
-    setTotalCount(articles.contents.articlesCount);
 
     switch (articles.state){
         case 'hasValue':
@@ -41,7 +39,9 @@ export const Articles = () => {
                     <Article key={article.slug} article={article} />
                 ));
             return (
-                <div>{articleList}</div>
+                <div>{articleList}
+                    <Pagination totalCount={articles.contents.articlesCount}/>
+                </div>
             );
 
         case 'loading':

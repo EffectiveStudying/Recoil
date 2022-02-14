@@ -25,11 +25,6 @@ export const $currentMenuState = atom({
     default: 'GlobalFeed'
 });
 
-export const $totalCountState = atom({
-    key: 'totalCount',
-    default: 0
-});
-
 export const $limitState = atom({
     key: 'limit',
     default: 1
