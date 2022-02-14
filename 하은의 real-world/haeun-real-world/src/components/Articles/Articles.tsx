@@ -1,4 +1,4 @@
-import { useRecoilValueLoadable, useSetRecoilState } from "recoil";
+import { useRecoilValueLoadable } from "recoil";
 import axios from "axios";
 import { selector } from "recoil";
 import { Article, ArticleType } from "./Article";
@@ -29,20 +29,21 @@ export const articleListSelector = selector<ArticleType>({
 
 export const Articles = () => {
     const articles = useRecoilValueLoadable(articleListSelector);
+    const [state, articlesCount, articleList] = [articles.state, articles.contents.articlesCount, articles.contents.articles];
 
-    switch (articles.state){
+    switch (state){
         case 'hasValue':
-            if(articles.contents.articlesCount === 0){
+            if(articlesCount === 0){
                 return <div>No articles are here... yet</div>
             }
             return (
                 <div>
                     {
-                        articles.contents.articles?.map((article) => (
+                        articleList?.map((article) => (
                             <Article key={article.slug} article={article} />
                         ))
                     }
-                    <Pagination totalCount={articles.contents.articlesCount}/>
+                    <Pagination totalCount={articlesCount}/>
                 </div>
             );
 
