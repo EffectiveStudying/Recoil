@@ -1,6 +1,6 @@
-import { Articles, Tabs, Tags } from "../../components";
+import { Articles, Tabs, Tags } from "..";
 
-const Home = () => {
+export const Home = () => {
     return (
         <div className="home-page">
             <div className="banner">
@@ -10,16 +10,14 @@ const Home = () => {
                 </div>
             </div>
             <div className="container page">
-            <div className="row">
-                <div className="col-md-9">
-                    <Tabs />
-                    <Articles />
+                <div className="row">
+                    <div className="col-md-9">
+                        <Tabs />
+                        <Articles />
+                    </div>
+                    <Tags />
                 </div>
-                <Tags />
             </div>
-        </div>
         </div>
     );
 }
-
-export default Home;

@@ -1,6 +1,4 @@
-import { Footer, Header } from "../components";
-import Home from "./Home/Home";
-
+import { Footer, Header, Home } from "../components";
 
 const index = () => {
     return (
