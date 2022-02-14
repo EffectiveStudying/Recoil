@@ -1,4 +1,4 @@
-import { Articles, FiltersTag, Tags, YourFeed, GlobalFeed, Pagination } from "../../blocks";
+import { Articles, Pagination, Tabs, Tags } from "../../blocks";
 
 const Home = () => {
     return (
@@ -10,21 +10,15 @@ const Home = () => {
                 </div>
             </div>
             <div className="container page">
-                <div className="row">
-                    <div className="col-md-9">
-                        <div className="feed-toggle">
-                            <ul className="nav nav-pills outline-active">
-                                <YourFeed />
-                                <GlobalFeed />
-                                <FiltersTag />
-                            </ul>
-                        </div>
-                        <Articles />
-                        <Pagination />
-                    </div>
-                    <Tags />
+            <div className="row">
+                <div className="col-md-9">
+                    <Tabs />
+                    <Articles />
+                    <Pagination />
                 </div>
+                <Tags />
             </div>
+        </div>
         </div>
     );
 }
