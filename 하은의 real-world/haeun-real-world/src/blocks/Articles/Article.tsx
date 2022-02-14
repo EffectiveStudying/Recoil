@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import Link from "next/link";
 import { ISOtoDate } from "../Calculations/DateConversion";
 import { ArticleTags } from "./ArticleTags";
@@ -36,7 +37,7 @@ export const Article = ({article}) => {
                 <Link href={"profile.html"}><a><img src={imgSrc} /></a></Link> {/* Todo : profile link */}
                 <div className="info">
                     <Link href={""}><a className="author">{article.author.username}</a></Link> {/* Todo : username link */}
-                    <span className="date">{ISOtoDate(article.createdAt)}</span>
+                    <span className="date">{format(new Date(article.createdAt), 'MMMM dd, yyyy')}</span>
                 </div>
                 <button className="btn btn-outline-primary btn-sm pull-xs-right">
                     <i className="ion-heart"></i> {article.favoritesCount}
