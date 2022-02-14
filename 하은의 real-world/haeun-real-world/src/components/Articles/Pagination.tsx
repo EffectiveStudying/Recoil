@@ -2,12 +2,12 @@ import Link from "next/link";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { $currentPageNumState, $limitState } from "../../atoms";
 
+const getRange = (start: number, end: number) => {
+    return [...Array(end - start + 1)].map((_, i) => start + i);
+};
+
 export const Pagination = ({totalCount}) => {
     const [currentPageNum, setCurrentPageNum] = useRecoilState($currentPageNumState);
-
-    const getRange = (start: number, end: number) => {
-      return [...Array(end - start + 1)].map((_, i) => start + i);
-    };
     const limit = useRecoilValue($limitState);
     const pages = totalCount > 0 ? getRange(0, Math.ceil(totalCount / limit) - 1) : [];
 
