@@ -2,6 +2,7 @@ import { useRecoilValueLoadable, useSetRecoilState } from "recoil";
 import axios from "axios";
 import { selector } from "recoil";
 import { $currentPageNumState, $currentTagState } from "../../atoms";
+import { apiUrlBase } from "../../types";
 
 
 export const tagListSelector = selector({
@@ -9,7 +10,7 @@ export const tagListSelector = selector({
     get: async() => {
         try{
             const response = await axios.get(
-                `https://conduit.productionready.io/api/tags`
+                `${apiUrlBase}/tags`
             );
             return response.data;
         }catch (e) {

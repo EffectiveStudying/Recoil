@@ -4,7 +4,7 @@ import { selector } from "recoil";
 import { Article } from "./Article";
 import { $currentAuthorState, $currentFavoritedState, $currentPageNumState, $currentTagState, $limitState } from "../../atoms";
 import { Pagination } from "./Pagination";
-import { ArticlesType } from "../../types";
+import { ArticlesType, apiUrlBase } from "../../types";
 
 export const articleListSelector = selector<ArticlesType>({
     key: 'articleListSelector',
@@ -17,7 +17,7 @@ export const articleListSelector = selector<ArticlesType>({
 
         try{
             const response = await axios.get(
-                `https://conduit.productionready.io/api/articles`,
+                `${apiUrlBase}/articles`,
                 { params: { tag: selectedTag, author: selecteAuthor, favorited: selectedFavorite, limit: selectedLimit, offset: selectedOffset }}
             );
 
