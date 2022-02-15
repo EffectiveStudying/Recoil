@@ -1,14 +1,19 @@
-import Link from "next/link";
-import { useRecoilValue } from "recoil"
+import classNames from "classnames";
+import { useRecoilValue, useRecoilState } from "recoil"
 import { $currentMenuState, $currentTagState } from "../../atoms"
 
 export const GlobalFeed = () => {
     const currentMenu = useRecoilValue($currentMenuState);
-    const currentTag = useRecoilValue($currentTagState);
+    const [currentTag, setCurrentTag] = useRecoilState($currentTagState);
+
+    const clickGlobalFeed = (e) => {
+        e.preventDefault();
+        setCurrentTag(undefined);
+    }
 
     return (
         <li className="nav-item">
-            <Link href={"/"}><a className={'nav-link ' + (currentMenu !== "GlobalFeed" || currentTag ? 'false' : 'active')}>Global Feed</a></Link>
+            <a href="" onClick={clickGlobalFeed} className={ classNames('nav-link ', { active : currentMenu === "GlobalFeed" && !currentTag })}>Global Feed</a>
         </li>
     );
 }

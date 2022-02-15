@@ -3,7 +3,7 @@ export const ArticleTags = ({tagList}) => {
         <ul className="tag-list">
             {
                 tagList.map((tag) => (
-                    <li key={`${tag}`} className="tag-default tag-pill tag-outline ng-binding ng-scope">
+                    <li key={`${tag}`} className="tag-default tag-pill tag-outline">
                         {tag}
                     </li>
                 ))

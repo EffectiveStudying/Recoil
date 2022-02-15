@@ -10,7 +10,7 @@ export const FiltersTag = () => {
     }
     return (
         <li className="nav-item">
-            <Link href={""}><a className="nav-link active ng-binding"><i className="ion-pound">{selectedTag}</i></a></Link>
+            <Link href={""}><a className="nav-link active"><i className="ion-pound">{selectedTag}</i></a></Link>
         </li>
     );
 }

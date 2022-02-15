@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import Link from "next/link";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { $currentPageNumState, $limitState } from "../../atoms";
@@ -14,15 +15,16 @@ export const Pagination = ({totalCount}) => {
     if(totalCount < limit){
         return <div />
     }
+    
     return (
         <nav>
             <ul className="pagination">
                 { 
                     pages.map((page) => (
                         <li key={`${page}`}
-                            className={'page-item ' + (currentPageNum === page ? 'active' : '')} 
+                            className={classNames('page-item', { active: currentPageNum === page })} 
                             onClick={() => setCurrentPageNum(page)}>
-                            <Link href={""}><a className="page-link">{page+1}</a></Link>
+                            <Link href={""}><a className="page-link">{ page + 1 }</a></Link>
                         </li>
                     ))
                 }
