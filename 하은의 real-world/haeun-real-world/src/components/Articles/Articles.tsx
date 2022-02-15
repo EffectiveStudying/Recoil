@@ -1,11 +1,12 @@
 import { useRecoilValueLoadable } from "recoil";
 import axios from "axios";
 import { selector } from "recoil";
-import { Article, ArticleType } from "./Article";
+import { Article } from "./Article";
 import { $currentAuthorState, $currentFavoritedState, $currentPageNumState, $currentTagState, $limitState } from "../../atoms";
 import { Pagination } from "./Pagination";
+import { ArticlesType } from "../../types";
 
-export const articleListSelector = selector<ArticleType>({
+export const articleListSelector = selector<ArticlesType>({
     key: 'articleListSelector',
     get: async({ get }) => {
         const selectedTag = get($currentTagState);

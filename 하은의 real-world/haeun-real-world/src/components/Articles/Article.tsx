@@ -2,31 +2,6 @@ import { format } from "date-fns";
 import Link from "next/link";
 import { ArticleTags } from "./ArticleTags";
 
-export type UserType = {
-    username: string,
-    bio: string,
-    image: string,
-    following: boolean
-};
-
-export type ArticleType = {
-    articles: articleType[],
-    articlesCount: number
-}
-
-export type articleType = {
-    slug: string,
-    title: string,
-    description: string,
-    body: string,
-    tagList: string[],
-    createdAt: string,
-    updatedAt: string,
-    favorited: boolean,
-    favoritesCount: number,
-    author: UserType
-};
-
 export const Article = ({article: {author, createdAt, favoritesCount, title, description, tagList}}) => {
     const imgSrc = author.image;
     
