@@ -4,7 +4,7 @@ const instance = axios.create({
     baseURL: 'https://api.realworld.io/api',
 });
 
-export const authInstance = axios.create({
+const authInstance = axios.create({
     baseURL: 'https://api.realworld.io/api',
 });
 
@@ -20,4 +20,4 @@ authInstance.interceptors.request.use(function (config: AxiosRequestConfig) {
     return config;
 });
 
-export { instance };
+export { instance, authInstance };

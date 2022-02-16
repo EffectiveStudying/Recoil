@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import React, { ReactElement, useMemo } from 'react';
 import { useRecoilValueLoadable } from 'recoil';
 import { $listArticles } from 'stores/article.store';
-import ArticlePreview from './Article';
+import ArticlePreview from './ArticlePreview';
 
 function ArticlePreviewList(): ReactElement {
     const router = useRouter();

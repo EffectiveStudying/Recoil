@@ -1,10 +1,10 @@
 import React, { ReactElement } from 'react';
-import { Article as ArticlePreview } from 'types';
+import { Article } from 'types';
 import { format } from 'date-fns';
 import Link from 'next/link';
 
 export type ArticleProps = Pick<
-    ArticlePreview,
+    Article,
     'author' | 'favoritesCount' | 'createdAt' | 'description' | 'title' | 'slug'
 >;
 

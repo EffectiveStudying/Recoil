@@ -4,6 +4,7 @@ import Footer from 'components/Footer';
 import Header from 'components/Header';
 import Tags from 'components/Tags';
 import type { NextPage } from 'next';
+import Link from 'next/link';
 import { useRecoilValueLoadable } from 'recoil';
 import { $tags } from 'stores/tag.store';
 
@@ -34,9 +35,9 @@ const Home: NextPage = () => {
                                         </a>
                                     </li> */}
                                     <li className="nav-item">
-                                        <a className="nav-link active" href="">
-                                            Global Feed
-                                        </a>
+                                        <Link href="/">
+                                            <a className="nav-link active">Global Feed</a>
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>
