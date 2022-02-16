@@ -21,7 +21,7 @@ function ArticlePreview({
             <div className="article-meta">
                 <Link href={`/profile/${author.username}`}>
                     <a>
-                        <img src="http://i.imgur.com/N4VcUeJ.jpg" />
+                        <img src={author.image} />
                     </a>
                 </Link>
                 <div className="info">
