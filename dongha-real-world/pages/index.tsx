@@ -1,5 +1,6 @@
 import ArticlePreviewList from 'components/Article/ArticlePreviewList';
 import Banner from 'components/Banner';
+import FeedList from 'components/FeedList/FeedList';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 import Tags from 'components/Tags';
@@ -28,7 +29,7 @@ const Home: NextPage = () => {
                     <div className="row">
                         <div className="col-md-9">
                             <div className="feed-toggle">
-                                <ul className="nav nav-pills outline-active">
+                                <FeedList />
                                     {/* <li className="nav-item">
                                         <a className="nav-link disabled" href="">
                                             Your Feed
