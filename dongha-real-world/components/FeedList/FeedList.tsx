@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import cx from 'classnames';
 
-function FeedList(): ReactElement {
+export function FeedList(): ReactElement {
     const router = useRouter();
     const { tag } = router.query;
     return (
@@ -28,5 +28,3 @@ function FeedList(): ReactElement {
         </ul>
     );
 }
-
-export default FeedList;

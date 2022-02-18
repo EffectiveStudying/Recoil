@@ -8,7 +8,7 @@ export type ArticleProps = Pick<
     'author' | 'favoritesCount' | 'createdAt' | 'description' | 'title' | 'slug'
 >;
 
-function ArticlePreview({
+export function ArticlePreview({
     slug,
     author,
     favoritesCount,
@@ -45,5 +45,3 @@ function ArticlePreview({
         </div>
     );
 }
-
-export default ArticlePreview;

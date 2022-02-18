@@ -6,7 +6,7 @@ export type SignedNavProps = {
     user: User;
 };
 
-function SignedNav({ user: { username } }: SignedNavProps): ReactElement {
+export function SignedNav({ user: { username } }: SignedNavProps): ReactElement {
     return (
         <nav className="navbar navbar-light">
             <div className="container">
@@ -40,5 +40,3 @@ function SignedNav({ user: { username } }: SignedNavProps): ReactElement {
         </nav>
     );
 }
-
-export default SignedNav;

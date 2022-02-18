@@ -9,7 +9,12 @@ export type PaginationProps = {
     href: string;
 };
 
-function Pagination({ currentPage, totalCount, size = 10, href }: PaginationProps): ReactElement {
+export function Pagination({
+    currentPage,
+    totalCount,
+    size = 10,
+    href,
+}: PaginationProps): ReactElement {
     const totalPage = Math.ceil(totalCount / size);
     const pageStart = Math.max(Math.min(currentPage - 4, totalPage - 9), 1) || 1;
     const pageCount = (pageStart + 10 > totalPage ? totalPage - pageStart + 1 : 10) || 1;
@@ -32,5 +37,3 @@ function Pagination({ currentPage, totalCount, size = 10, href }: PaginationProp
         </nav>
     );
 }
-
-export default Pagination;
