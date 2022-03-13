@@ -21,7 +21,6 @@ const Home: NextPage = () => {
 
     return (
         <>
-            <Header />
             <div className="home-page">
                 <Banner />
 

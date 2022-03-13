@@ -1,16 +1,16 @@
-import { SigninForm } from 'components/Signin';
+import { SignupForm } from 'components/Signup';
 import React, { ReactElement } from 'react';
 
-function Signin(): ReactElement {
+function Signup(): ReactElement {
     return (
         <div className="auth-page">
             <div className="container page">
                 <div className="row">
-                    <SigninForm />
+                    <SignupForm />
                 </div>
             </div>
         </div>
     );
 }
 
-export default Signin;
+export default Signup;
