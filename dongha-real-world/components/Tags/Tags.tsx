@@ -5,7 +5,7 @@ export type TagsProps = {
     list: string[];
 };
 
-function Tags({ list }: TagsProps): ReactElement {
+export function Tags({ list }: TagsProps): ReactElement {
     return (
         <div className="sidebar">
             <p>Popular Tags</p>
@@ -30,5 +30,3 @@ function Tag({ children }: TagProps): ReactElement {
         </Link>
     );
 }
-
-export default Tags;

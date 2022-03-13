@@ -1,3 +1,4 @@
+import { Header } from 'components/Header';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { RecoilRoot } from 'recoil';
@@ -21,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <link rel="stylesheet" href="//demo.productionready.io/main.css" />
             </Head>
             <RecoilRoot>
+                <Header />
                 <Component {...pageProps} />
             </RecoilRoot>
         </>

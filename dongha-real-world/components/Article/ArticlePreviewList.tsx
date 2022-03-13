@@ -1,11 +1,11 @@
-import Pagination from 'components/Pagination';
+import { Pagination } from 'components/Pagination';
 import { useRouter } from 'next/router';
 import React, { ReactElement, useMemo } from 'react';
 import { useRecoilValueLoadable } from 'recoil';
 import { $listArticles } from 'stores/article.store';
-import ArticlePreview from './ArticlePreview';
+import { ArticlePreview } from 'components/Article';
 
-function ArticlePreviewList(): ReactElement {
+export function ArticlePreviewList(): ReactElement {
     const router = useRouter();
     const { page = 1, tag = '' } = router.query;
     const listArticlesLoadable = useRecoilValueLoadable(
@@ -36,5 +36,3 @@ function ArticlePreviewList(): ReactElement {
         </>
     );
 }
-
-export default ArticlePreviewList;

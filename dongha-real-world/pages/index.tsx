@@ -1,8 +1,9 @@
-import ArticlePreviewList from 'components/Article/ArticlePreviewList';
-import Banner from 'components/Banner';
-import Footer from 'components/Footer';
-import Header from 'components/Header';
-import Tags from 'components/Tags';
+import { ArticlePreviewList } from 'components/Article';
+import { Banner } from 'components/Banner';
+import { FeedList } from 'components/FeedList';
+import { Footer } from 'components/Footer';
+import { Header } from 'components/Header';
+import { Tags } from 'components/Tags';
 import type { NextPage } from 'next';
 import Link from 'next/link';
 import { useRecoilValueLoadable } from 'recoil';
@@ -20,7 +21,6 @@ const Home: NextPage = () => {
 
     return (
         <>
-            <Header />
             <div className="home-page">
                 <Banner />
 
@@ -28,18 +28,7 @@ const Home: NextPage = () => {
                     <div className="row">
                         <div className="col-md-9">
                             <div className="feed-toggle">
-                                <ul className="nav nav-pills outline-active">
-                                    {/* <li className="nav-item">
-                                        <a className="nav-link disabled" href="">
-                                            Your Feed
-                                        </a>
-                                    </li> */}
-                                    <li className="nav-item">
-                                        <Link href="/">
-                                            <a className="nav-link active">Global Feed</a>
-                                        </Link>
-                                    </li>
-                                </ul>
+                                <FeedList />
                             </div>
                             <ArticlePreviewList />
                         </div>
